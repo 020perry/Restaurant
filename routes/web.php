@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
-
+Route::resource('categories', CategoryController::class);
+Route::resource('products', ProductController::class);
